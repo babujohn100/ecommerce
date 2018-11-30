@@ -1,0 +1,38 @@
+{% extends "base.html" %} {% block content %}
+
+
+<div class="row">
+    <div class="col-sm-10 col-md-9">
+        <h3 class="watch">{{ product.name }}</h3>
+
+        {% if product.image %}
+        <img src="{{ MEDIA_URL }}{{ product.image }}" /> {% endif %}
+
+        <div class="row">
+            <div class="col-xs-9">
+                <p>{{ product.description | linebreaksbr }}</p>
+                <p><span class="boldtext"><strong>Brand:</strong></span> {{ product.brand }} </p>
+                <p><span class="boldtext"><strong>Price:</strong></span> €{{ product.price }}</p>
+                <!--<p><span class="boldtext"><strong>Sku:</strong></span> {{ product.sku }} </p>-->
+                <!--<p><span class="boldtext"><strong>Stock:</strong></span> {{ product.stock }} </p>-->
+                <!--<p><span class="boldtext">Published on:</span> {{ product.review.published_date }} </p>-->
+                <!--<p><a href="#" class="btn btn-default">Read more</a></p>-->
+
+                <a href="{% url 'view_products' %}" class="btn btn-default">Back to Product list</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<h1 class="review1">REVIEWS</h1>
+
+{% for review in product.reviews.all %}
+<h2 class="review">{{ review.title }} :</h2>
+
+<h3 class="review">{{ review.content}}</h2>
+
+<h3 class="review">{{review.date}}</h2>
+{% endfor %} {% endblock %}
