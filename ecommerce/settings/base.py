@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'accounts',
     'django_forms_bootstrap',
     'cart',
-    'storages'
+    'storages',
+    'checkout'
 ]
 
 MIDDLEWARE = [
@@ -133,3 +134,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+STRIPE_PUBLISHABLE_KEY=os.environ.get('STRIPE_PUBLISHABLE_KEY')
+
+STRIPE_SECRET_KEY=os.environ.get("STRIPE_SECRET_KEY")
+
+MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"

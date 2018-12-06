@@ -27,14 +27,32 @@ footer {
 .navbar{
     background-color:#00d4ad;
     font-style: oblique;
+    animation: opacity 2s ease-in-out infinite;
+
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.my_class{
+    color: green;
+}
     
 
-}
-
 .navbar-brand{
-font-size: 40px;    
+font-size: 30px;    
 }
-
 
 .products{
     font-style:italic;
@@ -46,6 +64,7 @@ font-size: 40px;
     text-decoration: underline;
     background-color:green;
     color:red;
+    font-size: 20px !important;
 }
 
 .name{
@@ -60,7 +79,19 @@ font-size: 40px;
 .review{
     color:red;
     font-style: italic;
+    margin-top:35px;
+    text-decoration: underline;
+    
 }
+
+.review1{
+    color:red;
+    font-style: italic;
+    margin-top:35px;
+    
+    
+}
+
 
 .watch{
     color:red;
@@ -68,10 +99,23 @@ font-size: 40px;
 
 .boldtext{
     color:red;
-    font-size: 50px;
+    font-size: 30px;
 }
 
-.review1{
-    text-decoration: underline;
+.title{
+    color:red;
+    font-size: 30px;
+}
+
+
+.submit{
+    border-radius: 10px;
+    color:chocolate;
+}
+
+#button{
+    border-radius: 12px;
+    color: #1000fff0;
+    background-color: yellow;
 }
 

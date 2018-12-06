@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from products.views import view_products, product_detail
+from products.views import view_products, product_detail, add_review
 from django.views.static import serve
 from django.conf import settings
 from accounts.views import signup, show_profile
 from cart.views import added_to_cart, view_cart, remove_from_cart
+from checkout.views import show_checkout, submit_payment
 
 
 urlpatterns = [
@@ -30,7 +31,10 @@ urlpatterns = [
     path('accounts/profile', show_profile, name="profile"),
     path('signup/', signup, name="signup"),
     path('product_detail/<int:id>',product_detail, name='product_detail'),
+    path('product_detail/<int:id>/add_review',add_review, name='add_review'),
     path('cart/add/', added_to_cart, name="added_to_cart"),
     path('view_cart/', view_cart, name="view_cart"),
     path('cart/remove/', remove_from_cart, name="remove_from_cart"),
+    path('checkout/show_checkout', show_checkout, name="show_checkout"),
+    path('checkout/pay', submit_payment, name="submit_payment"),
 ]
